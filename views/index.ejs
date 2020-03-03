@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>Formulario b&aacute;sico de POST a Mongo DB</p>
+
+    <form method="POST" action="/users">
+
+        <table>
+            <tr>
+                <td><label>Nombre: </label></td>
+                <td><input name="name" id="name"></input></td>
+            </tr>
+
+            <tr>
+                <td><label>Apellido: </label></td>
+                <td><input name="lastname" id="lastname"></input></td>
+            </tr>
+
+            <tr>
+                <td><label>Email: </label></td>
+                <td><input name="email" id="email"></input></td>
+            </tr>
+
+            <tr>
+                <td><label>Contrase&ntilde;a</label></td>
+                <td><input name="password" id="password"></input></br></td>
+            </tr>
+        </table>
+      
+      </br>
+
+        <button type="submit">Enviar</button>
+    </form>
+
+    <form method="GET" action="/usuariosRegistrados">
+        <button type="submit">Usuarios Registrados</button>
+    </form>
+
+  </body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Usuarios Registrados</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>Usuarios Registrados</h1>
+
+    <table>
+       <th>Nombre</th>
+       <th>Apellido</th>
+       <th>Email</th>
+       <th>Contrase&ntilde;a</th>
+
+      <% for (var i in usuario) { %>
+        <tr>
+          <td><%= usuario[i].name %></td>
+          <td><%= usuario[i].lastname %></td>
+          <td><%= usuario[i].email %></td>
+          <td><%= usuario[i].password %></td>
+        </tr>
+      <% } %>
+    </table>
+
+  </body>
+</html>
