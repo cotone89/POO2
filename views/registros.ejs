@@ -6,6 +6,10 @@
   </head>
   <body>
     <h1>Usuarios Registrados</h1>
+   
+    <button onclick="history.back()">Volver</button>
+    </br>
+    </br>
 
     <table>
        <th>Nombre</th>
@@ -13,15 +17,17 @@
        <th>Email</th>
        <th>Contrase&ntilde;a</th>
 
-      <% for (var i in usuario) { %>
+      <% for (var i in usuarios) { %>
         <tr>
-          <td><%= usuario[i].name %></td>
-          <td><%= usuario[i].lastname %></td>
-          <td><%= usuario[i].email %></td>
-          <td><%= usuario[i].password %></td>
+          <td><%= usuarios[i].name %></td>
+          <td><%= usuarios[i].lastname %></td>
+          <td><%= usuarios[i].email %></td>
+          <td><%= usuarios[i].password %></td>
         </tr>
       <% } %>
     </table>
+
+
 
   </body>
 </html>

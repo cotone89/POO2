@@ -1,7 +1,5 @@
 var User = require('../models/users');
 
-
-
 exports.lista_usuarios = function (req, res, next) {
     console.log("entro a controller lista usuarios");
 
@@ -9,14 +7,31 @@ exports.lista_usuarios = function (req, res, next) {
         if (err) return handleError(err);
         //res.json(usuario.sort());
 
-        res.render('registros', { usuario:usuarios});
+        usuarios = usuarios.sort();
+        usuarios = reemplazar_nombres(usuarios);
 
+        res.render('registros', { usuarios:usuarios});
     });
-
 
 }
 
+function reemplazar_nombres(arreglo) {
 
+    arreglo.map(function (arreglo) {
+
+        if (arreglo.name.includes('\u00f1')) {
+            let nombre = arreglo.name;
+            arreglo.name = nombre.replace(new RegExp("\u00f1", 'gi'), "n");//todas las enies
+        }
+        if (arreglo.lastname.includes('\u00f1')) {
+            let apellido = arreglo.lastname;
+            arreglo.lastname = apellido.replace(new RegExp("\u00f1", 'gi'), "n");//todas las enies
+        }
+    });
+    
+    return arreglo;
+    
+}
 
 
 exports.user_create = function (req, res, next) {
